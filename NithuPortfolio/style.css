@@ -1,0 +1,1191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab';
+    box-sizing: border-box;
+}
+
+header{
+    background-color: white;
+    padding: 2px;
+    color: black;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #E6Dacd;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    z-index: 1000;
+}
+
+.nav-bar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    position: relative;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.logo a {
+    text-decoration: none; /* Remove underline from the logo link */
+    color: black; /* Keep the logo color black */
+}
+
+.logo span{
+    color: black;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.menu{
+    display: flex;
+    padding-left: 70px;
+}
+
+.menu li{
+    padding-left: 10px;
+}
+
+.menu li a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 450;
+    transition: 0.3s linear;
+}
+
+.menu li a::after{
+    position: absolute;
+    content: "";
+    bottom: -3px; /* down line of the links thickness size */
+    left: 0;
+    width: 0; /* down line of the links width size / /(This also remove the down line too) */
+    height: 3px; /* down line of the links height size */
+    background-color:  #D4A59A; /* down line of the links color*/
+    transition: 0.3s linear;
+}
+
+.menu li a:hover::after{
+    width: 100%;
+}
+
+.menu li a:hover{
+    color:  #D4A59A;
+}
+
+.open-menu,
+.close-menu{
+    position: absolute;
+    color: black;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu{
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu{
+    top: 20px;
+    right: 20px;
+}
+
+#home-check{
+    display: none;
+}
+
+#aboutme-check{
+    display: none;
+}
+
+#resume-check{
+    display: none;
+}
+
+#projects-check{
+    display: none;
+}
+
+#contact-check{
+    display: none;
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+.picturecontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.picturecontainer .image{
+    width: 553px;
+    height: 70vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 35px black;
+}
+
+.picturecontainer .image img{
+    width: 100%;
+}
+
+.picturecontainer .content{
+    color: black;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1 i{
+    font-weight: lighter;
+    font-size: 90px;
+}
+
+/* Tooltip CSS */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 240px; /* Adjusted for better readability */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px; /* 10px */
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%; /* Position above the text 100% */
+    left: 50%; /*30%*/
+    margin-left: -110px; /* Centering tooltip -130px */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 80%;
+}
+
+.tooltip .tooltiptext::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow below tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.content h2{
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.viewButton {
+    display: inline-flex; /* Ensures buttons stay on the same line */
+    gap: 20px; /* Adds space between the buttons */
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #D4A59A;
+    color: black;
+    border-radius: 20px;
+    border: 0.2rem solid #D4A59A;
+    padding: 10px 20px; /* Provides padding around the text */
+    font-size: 16px; /* Standard font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border: 0.2rem solid #D4A59A;
+    box-shadow: 0px 0px 10px #D4A59A;
+}
+
+.content p{
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.socio-Links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.socio-Links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: #D4A59A;
+    border: 0.2rem solid #D4A59A;
+    border-radius: 50%;
+    color: black;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.socio-Links i:hover{
+    scale: 1.3;
+    color: black;
+    background-color: white;
+    border: 3px solid #D4A59A
+}
+
+/*----------------------------------------------------------------------------------ABOUT ME SECTION-------------------------------------------------------------*/
+
+.about-container {
+    width: 60%; /* Adjust width of the box */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: stretch; /* Ensure items stretch to match container height */
+    justify-content: flex-start; /* Align items to the start */
+    margin: 70px auto 90px; /* Center the container horizontally and add top and bottom margins */
+}
+
+.about-content {
+    display: flex; /* Use flexbox for the content layout */
+    align-items: center; /* Align items to the top */
+    width: 100%; /* Full width to keep layout consistent */
+    text-align: justify;
+    margin: 30px 20px;
+}
+
+.about-heading {
+    flex-shrink: 0; /* Prevent shrinking of the heading */
+    text-align: center; /* Center the text */
+    margin-left: 15px; /* Space between heading and vertical line */
+}
+
+.about-heading h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.vertical-line {
+    border-left: 2px solid #D4A59A; /* Color of the vertical line */
+    height: 50%; /* Ensure the vertical line stretches to full height */
+    margin: 0 20px; /* Space around the vertical line */
+}
+
+.about-text {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+    flex-grow: 1; /* Ensure the text takes up remaining space */
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/*----------------------------------------------------------------------------------RESUME SECTION---------------------------------------------------------------*/
+
+.experience-section {
+    display: flex; /* Use flexbox to align items in a row */
+    margin-top: -220px; /* Space below the section */
+    align-items: center;
+    justify-content: center;
+    gap: 480px;
+    text-transform: uppercase;
+}
+
+.experience-title {
+    margin-right: 20px; /* Space between the title and the button */
+    font-size: 24px;
+}
+
+.download-button {
+    background-color: #D4A59A;
+    color: black;
+    border-radius: 20px;
+    border: 0.2rem solid #D4A59A;
+    padding: 10px 20px; /* Provides padding around the text */
+    font-size: 16px; /* Standard font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background-color: white;
+    color: black;
+    border: 0.2rem solid #D4A59A;
+    box-shadow: 0px 0px 10px #D4A59A;
+}
+
+.experience-container{
+    position: relative; /* Establishes a positioning context for absolute positioning */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the start to allow negative margin to take effect */
+}
+
+.experience-content {
+    display: flex; /* Use flexbox for layout */
+    background-color: white; /* White background for the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 70px; /* Inner padding */
+    margin-top: -260px;
+    max-width: 800px; /* Set a maximum width for the box */
+    width: calc(100% - 40px); /* Allow it to take full width minus margin */
+    gap: 70px;
+}
+
+.experience-info {
+    flex: 1; /* Allow the info section to grow */
+    margin-right: 20px; /* Space between the two sections */
+}
+
+.experience-description {
+    flex: 2; /* Allow the description section to take more space */
+}
+
+.experience-info span{
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.experience-description p {
+    margin: 0; /* Remove default margins */
+    padding: 5px 0; /* Add padding for spacing between paragraphs */
+    text-align: justify;
+}
+
+.education-section{
+    display: flex; /* Flexbox for larger screens */
+    margin-top: -200px; /* Adjust as needed */
+    margin-left: -325px; /* Adjust as needed */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 480px; /* Space between items */
+    text-transform: uppercase; /* Uppercase text */
+    padding: 20px; /* Add some default padding */
+    font-size: 17px;
+}
+
+.education-container{
+    position: relative; /* Establishes a positioning context for absolute positioning */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the start to allow negative margin to take effect */
+}
+
+.education-content {
+    display: flex; /* Use flexbox for layout */
+    background-color: white; /* White background for the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 70px; /* Inner padding */
+    margin-top: -260px;
+    max-width: 800px; /* Set a maximum width for the box */
+    width: calc(100% - 40px); /* Allow it to take full width minus margin */
+    gap: 70px;
+}
+
+.education-info {
+    flex: 1; /* Allow the info section to grow */
+    margin-right: 20px; /* Space between the two sections */
+}
+
+.education-description {
+    flex: 2; /* Allow the description section to take more space */
+}
+
+.education-info span{
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.education-description p {
+    margin: 0; /* Remove default margins */
+    padding: 5px 0; /* Add padding for spacing between paragraphs */
+    text-align: justify;
+}
+
+.skill-section{
+    position: relative; /* Establishes a positioning context for absolute positioning */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the start to allow negative margin to take effect */
+}
+
+.skill-content {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack child elements vertically */
+    background-color: white; /* White background for the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 70px; /* Inner padding */
+    margin-top: 70px;
+    margin-bottom: 90px;
+    max-width: 800px; /* Set a maximum width for the box */
+    width: calc(100% - 40px); /* Allow it to take full width minus margin */
+    gap: 70px;
+}
+
+.section-heading-one,  
+.section-heading-two {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    margin-top: 20px;  /* Adds space above the heading */
+    text-transform: uppercase;
+}
+
+/* Styling for list items to be horizontal */
+.skill-list-one,
+.skill-list-two {
+    list-style-type: none; /* Remove default list style */
+    padding-left: 0; /* Remove padding */
+    color: black;
+    font-size: 1em;
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Wrap items to the next line if they don’t fit in one row */
+    gap: 20px; /* Space between each item */
+    margin-top: -50px;
+}
+
+/* Styling for individual list items */
+.skill-list-one li,
+.skill-list-two li {
+    display: flex;
+    align-items: center; /* Align icon and text */
+}
+
+/* CSS for square icon next to each item */
+.square-icon {
+    display: inline-block;
+    width: 10px; /* Size of the square icon */
+    height: 10px;
+    background-color: #D4A59A; /* Blue color for the square */
+    margin-right: 8px; /* Space between square and text */
+    vertical-align: middle;
+}
+
+/*----------------------------------------------------------------------------------PROJECT SECTION--------------------------------------------------------------*/
+
+.project-wrapper-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0e6de; /* background color */
+}
+
+.project-container-one {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1070px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.project-text-box-one {
+    padding: 40px;
+    width: 60%;
+    position: relative;
+}
+
+.project-text-box-one::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 0;
+    width: 10px;
+    height: 65px;
+    background-color: #D4A59A;
+}
+
+.project-text-box-one h2 {
+    color: #D4A59A;
+    font-size: 24px;
+    margin-left: 10px;/*Optional, either add or no need*/
+}
+
+.project-text-box-one h3 {
+    color: black;
+    font-size: 18px;
+    margin-left: 10px;/*Optional, either add or no need*/
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.project-text-box-one p {
+    color: black;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-left: 10px;/*Optional, either add or no need*/
+    text-align: justify;
+    margin-top: 40px;
+}
+
+.project-image-box-one {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.project-image-box-one img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.project-wrapper-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0e6de; /* background color */
+    margin-top: -120px; /* Adjust value as needed */
+    
+}
+
+.project-container-two {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1070px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.project-text-box-two {
+    padding: 40px;
+    width: 60%;
+    position: relative;
+}
+
+.project-text-box-two::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 0;
+    width: 10px;
+    height: 65px;
+    background-color: #D4A59A;
+}
+
+.project-text-box-two h2 {
+    color: #D4A59A;
+    font-size: 24px;
+    margin-left: 10px;/*Optional, either add or no need*/
+}
+
+.project-text-box-two h3 {
+    color: black;
+    font-size: 18px;
+    margin-left: 10px;/*Optional, either add or no need*/
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.project-text-box-two p {
+    color: black;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-left: 10px;/*Optional, either add or no need*/
+    text-align: justify;
+    margin-top: 40px;
+}
+
+.project-image-box-two {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.project-image-box-two img {
+    width: 120%;
+    height: 110%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/*----------------------------------------------------------------------------------CONTACT SECTION--------------------------------------------------------------*/
+
+.contact-section{
+    display: flex; /* Flexbox for larger screens */
+    margin-top: -200px; /* Adjust as needed */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 480px; /* Space between items */
+    text-transform: uppercase; /* Uppercase text */
+    padding: 20px; /* Add some default padding */
+    font-size: 20px;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 90px 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 750px;
+    border-radius: 8px;
+    margin: -250px auto 100px auto; /* Moves the form up by 20px */;
+}
+  
+.form-group {
+    display: flex;
+    gap: 15px;
+}
+  
+.form-field {
+    flex: 1;
+    margin-bottom: 15px;
+}
+  
+.form-field label {
+    display: block;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 5px;
+}
+  
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 14px;
+    color: black;
+}
+  
+.contact-form button {
+    background-color: #D4A59A;
+    color: black;
+    border-radius: 20px;
+    border: 0.2rem solid #D4A59A;
+    padding: 10px 20px; /* Provides padding around the text */
+    font-size: 16px; /* Standard font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+  
+.contact-form button:hover {
+    background-color: white;
+    color: black;
+    border: 0.2rem solid #D4A59A;
+    box-shadow: 0px 0px 10px #D4A59A;
+}
+
+/*----------------------------------------------------------------------------------FOOTER SECTION---------------------------------------------------------------*/
+
+footer {
+    background-color: white;
+    padding: 10px;
+    color: black;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contact-info, .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between icons and text */
+}
+
+i {
+    font-size: 20px;
+    color: black;
+}
+
+span {
+    font-size: 16px;
+}
+
+/*----------------------------------------------------------------------------------MOBILE RESPONSIVE-----------------------------------------------------------*/
+@media(max-width:700px){
+
+    .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 19px;
+    }
+
+    .logo span{
+        font-size: 19px;
+    }
+
+    .menu{
+        list-style: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        padding-left: 50px;
+        right: -100%;
+        z-index: 100;
+        background-color: #E6Dacd;
+        color: black;
+        transition: all 0.2s linear;
+    }
+
+    .menu li{
+        margin-top: 40px;
+    }
+
+    .menu li a{
+        color: black;
+        justify-content: center;
+        padding-right: 40px;
+    }
+
+    .menu li a:hover {
+        color: inherit; /* Use the default color instead of the hover color */
+    }
+
+    .open-menu, .close-menu{
+        display: block;
+        font-size: large;
+    }
+
+    #home-check:checked ~ .menu{
+        right: 0;
+    }
+
+    #aboutme-check:checked ~ .menu{
+        right: 0;
+    }
+
+    #resume-check:checked ~ .menu{
+        right: 0;
+    }
+
+    #projects-check:checked ~ .menu{
+        right: 0;
+    }
+
+    #contact-check:checked ~ .menu{
+        right: 0;
+    }
+
+    .picturecontainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .picturecontainer .image{
+        margin-top: 20px;
+        width: 55%; 
+        height: 60%;
+    }
+
+    .picturecontainer .content{
+        width: 70%;
+    }
+
+    .content h1 i{
+        font-size: 50px;
+    }
+
+    .content h2{
+        font-size: 20px;
+    }
+
+    .viewButton{
+        margin-top: 10px;
+    }
+
+    .content p{
+        margin-top: 5px;
+    }
+
+    button {
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+        font-size: 18px; /* Slightly smaller font size */
+        width: 100%; /* Full-width buttons on small screens */
+        margin: 5px 0; /* Adds space between buttons when stacked */
+    }
+    
+    /*----------------------------------------------------------------------------------FOOTER SECTION-------------------------------------------------------------*/
+
+    footer {
+        margin-top: 90%;
+        padding: 50px;
+    }
+
+    .footer-section {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center sections horizontally */
+        padding: 10px; /* Reduce padding for mobile view */
+        padding-bottom: 2px;
+    }
+
+    .footer-column {
+        margin-bottom: 30px; /* Decrease space between stacked sections */
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 16px; /* Slightly reduce heading size */
+    }
+
+    .contact-info, .social-icons {
+        flex-direction: row; /* Keep items in a row */
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Reduce the gap between icons and text */
+    }
+
+    i {
+        font-size: 18px; /* Reduce icon size slightly */
+    }
+
+    span {
+        font-size: 14px; /* Decrease text size */
+    }
+
+    .social-icons a {
+        margin-right: 5px; /* Add a small gap between social icons */
+    }
+
+    /*----------------------------------------------------------------------------------ABOUTME SECTION-------------------------------------------------------------*/
+
+    .about-container {
+        width: 90%; /* Increase width to use more screen space */
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin-top: 100px;
+        margin-bottom: -250px;
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        margin: 20px 0; /* Adjust margin */
+    }
+
+    .about-heading {
+        margin: 0; /* Remove left margin */
+        text-align: center; /* Center the heading */
+        margin-bottom: 20px;
+    }
+
+    .vertical-line {
+        display: none; /* Remove vertical line */
+    }
+
+    .about-text {
+        font-size: 16px; /* Maintain font size for mobile */
+        text-align: center; /* Center text for better readability */
+    }
+
+    .about-text p {
+        margin-bottom: 15px; /* Adjust margin for paragraphs */
+        text-align: justify;
+    }
+
+    /*----------------------------------------------------------------------------------RESUME SECTION-------------------------------------------------------------*/
+
+    .experience-section {
+        gap: 1px;
+        font-size: 12px;
+        margin-top: -120px;
+        flex-direction: column; /* Stack items vertically */
+        margin-left: -60px;
+    }
+
+    .experience-title {
+        margin-bottom: 50px;
+    }
+    
+    .download-button {
+        padding: 8px 15px; /* Provides padding around the text */
+        margin-left: -50px;
+    }
+
+    .experience-container{
+        padding: 15px;
+    }
+
+    .experience-content {
+        display: block; /* Change to block layout on smaller screens */
+        padding: 50px; /* Adjust padding for smaller screens */
+        margin-top: -150px; /* Adjust negative margin for smaller screens */
+        width: calc(100% - 20px); /* Slightly reduce width for smaller screens */
+    }
+
+    .experience-info,
+    .experience-description {
+        margin-bottom: 20px; /* Add space between stacked sections */
+        margin-right: 0; /* Resetting margin-right since we aren't using flex */
+    }
+
+    .experience-description p {
+        font-size: 14px;
+    }
+    
+    .education-container{
+        padding: 15px;
+    }
+
+    .education-section {
+        display: block; /* Stack items vertically on mobile */
+        margin-top: 70px; /* Adjust margin-top */
+        margin-left: -80px; /* Reset left margin */
+        gap: 20px; /* Reduce gap for stacking items */
+        text-align: center; /* Center text */
+        padding: 10px; /* Optional: reduce padding for mobile */
+        font-size: 15px;
+    }
+
+    .education-content {
+        display: block; /* Change to block layout on smaller screens */
+        padding: 50px; /* Adjust padding for smaller screens */
+        margin-top: -500px; /* Adjust negative margin for smaller screens */
+        width: calc(100% - 20px); /* Slightly reduce width for smaller screens */
+    }
+
+    .education-info,
+    .education-description {
+        margin-bottom: 20px; /* Add space between stacked sections */
+        margin-right: 0; /* Resetting margin-right since we aren't using flex */
+    }
+
+    .education-description p {
+        font-size: 14px;
+    }
+
+    .skill-section{
+        padding: 5px;
+        height: 520px;
+    }
+
+    .skill-content {
+        padding: 70px; /* Reduce padding for smaller screens */
+        gap: 40px; /* Adjust the gap between sections */
+        margin-top: 100px;
+    }
+
+    .skill-list-one,
+    .skill-list-two {
+        flex-direction: column; /* Stack items vertically */
+        gap: 10px; /* Reduce space between items for better vertical layout */
+        margin-top: 0; /* Adjust top margin for mobile */
+    }
+    
+    .section-heading-one,
+    .section-heading-two {
+        font-size: 20px; /* Slightly smaller font for headings on mobile */
+    }
+    
+    /*----------------------------------------------------------------------------------PROJECTS SECTION-------------------------------------------------------------*/
+
+    .project-wrapper-one {
+        height: auto;
+        padding: 20px;
+    }
+
+    .project-container-one {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 50px;
+    }
+
+    .project-text-box-one {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .project-text-box-one::before {
+        top: 40px;
+        bottom: 0;
+        width: 10px;
+        height: 65px;
+    }
+
+    .project-image-box-one {
+        width: 100%;
+        padding: 10px;
+        margin-top: -80px;
+    }
+
+    .project-image-box-one img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-text-box-one h2 {
+        font-size: 22px;
+        margin-left: 0;
+    }
+
+    .project-text-box-one h3 {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .project-text-box-one p {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .project-wrapper-two {
+        height: auto;
+        padding: 20px;
+        margin-bottom: -325px; /* Use negative margin to reduce extra space */
+    }
+
+    .project-container-two {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 100px;
+        margin-bottom: 50px; /* Ensure no bottom margin */
+    }
+
+    .project-text-box-two {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .project-text-box-two::before {
+        top: 40px;
+        bottom: 0;
+        width: 10px;
+        height: 65px;
+    }
+
+    .project-image-box-two {
+        width: 100%;
+        padding: 0;
+        margin-top: -40px; /* Slightly overlap with text box */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-image-box-two img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0 0 8px 8px; /* Rounded corners for bottom */
+    }
+
+    .project-text-box-two h2 {
+        font-size: 22px;
+        margin-left: 0;
+    }
+
+    .project-text-box-two h3 {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .project-text-box-two p {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    
+    /*----------------------------------------------------------------------------------CONTACT SECTION-------------------------------------------------------------*/
+
+    .contact-form {
+        padding: 40px 20px; /* Reduces padding */
+        width: 90%; /* Makes the form width responsive */
+        margin-top: -200px;
+        margin-bottom: -250px;
+    }
+    
+    .form-group {
+        display: block; /* Stacks fields vertically */
+    }
+    
+    .form-field {
+        width: 100%; /* Ensures fields take full width */
+        margin-bottom: 15px;
+    }
+    
+    .contact-form button {
+        width: 100%; /* Makes the button full width */
+        padding: 12px; /* Adjust button padding for mobile */
+        font-size: 16px; /* Increases button text size slightly */
+    }
+}
