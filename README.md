@@ -22,9 +22,3 @@ This is my personal portfolio website showcasing my skills, projects, and experi
 - **Skills**: Displays a visual representation of my expertise in various technologies, including Manual Testing, Selenium, SQL Server, Java, and more.
 - **Projects**: Describes the projects I've worked on, with details on the tools and techniques used.
 - **Contact**: Allows visitors to send me messages and find my contact details.
-
-## How to Use
-- Clone the repository:
-  ```bash
-  git clone https://github.com/niths09/Personal-Portfolio
-  ```
